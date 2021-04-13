@@ -42,6 +42,7 @@ class ConnectedActivity : Activity() {
             stringBuilder.append(
                 listItems[i].trimIndent()
             )
+            stringBuilder.appendLine()
         }
         textViewContent?.text = stringBuilder.toString()
     }
