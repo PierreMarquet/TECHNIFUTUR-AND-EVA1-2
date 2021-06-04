@@ -21,12 +21,12 @@ class ConnectedActivity : Activity() {
 
     private fun loadData() {
         listItems.clear()
-        listItems.add("Item1")
-        listItems.add("Item2")
-        listItems.add("Item3")
-        listItems.add("Item4")
-        listItems.add("Item5")
-        listItems.add("Item6")
+        listItems.add("Message 1")
+        listItems.add("Message 2")
+        listItems.add("Message 3")
+        listItems.add("Message 4")
+        listItems.add("Message 5")
+        listItems.add("Message 6")
         numberOfItems = listItems.size
         updateData()
     }
