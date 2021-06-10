@@ -21,7 +21,7 @@ class MainActivity : Activity(), View.OnClickListener {
         return true
     }
 
-    override fun onClick(v: View) {
+    override fun onClick(v: View): Boolean {
         val loginEmail = (findViewById<View>(R.id.editTextEmail) as EditText).text.toString()
         val password = (findViewById<View>(R.id.editTextPassword) as EditText).text.toString()
         if (!isLoginValid(loginEmail)) {
@@ -29,18 +29,24 @@ class MainActivity : Activity(), View.OnClickListener {
                 AlertDialog.Builder(this).setMessage("Login invalide").setPositiveButton("Ok", null)
             val alertDialog = builder.create()
             alertDialog.show()
-            return
+            return true
         }
         if (password.isEmpty()) {
-            return
+            return false
+
         }
         val intentConnection = Intent(this, ConnectedActivity::class.java)
         startActivity(intentConnection)
-    }
+        }
 
     private fun isLoginValid(login: String): Boolean {
         val firstCharacter = login.substring(0, 1)
         val value = firstCharacter.toInt()
+
+        try {
+            firstCharacter.toInt()
+        }catch (e: )
+
         val convertedValue = Integer.toString(value)
         if (firstCharacter.compareTo(convertedValue) != 0) {
             return false
